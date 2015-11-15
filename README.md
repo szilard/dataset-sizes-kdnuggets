@@ -1,5 +1,5 @@
 
-#### Size of datasets used for analytics
+### Size of datasets used for analytics
 
 With so much hype about "big data" and the industry pushing for "big data" tools for everyone,
 the question arises who has big data and who really needs these tools (which are more complex and 
@@ -40,7 +40,7 @@ in the discussion below.
 
 The above results imply an annual rate of increase of datasets of `10^0.075 ~ 1.2` that is 20%. 
 
-The median dataset size increases from 6GB (2006) to 30GB (2015). That's all tiny, even more for
+The median dataset size increases from 6 GB (2006) to 30 GB (2015). That's all tiny, even more for
 raw datasets, and it implies that over 50% of analytics professionals work with datasets
 that (even in raw form) can fit in the memory of a single machine, therefore it can be definitely dealt 
 with using simple analytical tools.
