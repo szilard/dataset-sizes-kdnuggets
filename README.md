@@ -63,11 +63,12 @@ many organizations are trying to use "big data" tools for those sizes.
 About 5% of uses are in the Pettabytes range and likely need big data tools like Hadoop or Spark. 
 While the hype around big
 data, "exponential growth" of sensors and internet-of-things (IoT) etc. suggests a more rapid growth
-rate than 20% yearly, the simple linear fit used above does not extend over the 90% precentile and 
-it's hard to tell either way directly from the data.
+rate than 20% yearly, the simple linear fit used above does not extend over the 90% percentile and 
+it's hard to tell either way directly from this survey data.
 
 Unfortunately it is unclear from all this study what's the distribution of dataset sizes used for 
-modeling/machine learning (my primary area of interest). Some informal surveys suggest that for 
+modeling/machine learning (my primary area of interest). Some informal surveys 
+done at various [meetups and conference talks](https://github.com/szilard/talks) suggest that for 
 at least 90% of non-linear supervised learning uses the data fits in the RAM of a single machine 
 and can be processed by high-performant tools like xgboost or H2O
 (see [this github repo](https://github.com/szilard/benchm-ml)
