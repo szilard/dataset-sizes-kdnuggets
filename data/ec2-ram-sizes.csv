@@ -1,0 +1,8 @@
+year,type,size_GB
+2007,m1.xlarge,15
+2009,m2.4xlarge,68
+2012,hs1.8xlarge,117
+2013,cr1.8xlarge,244
+2013,i2.8xlarge,244
+2014,r3.8xlarge,244
+2016,x1,2000

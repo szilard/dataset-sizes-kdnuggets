@@ -15,6 +15,9 @@ In terms of computational resources needed I like to think in terms of the
 I'm mostly interested in tools for non-linear machine learning, the distribution of dataset sizes
 practitioners have to deal with, and how all this has changed over the last years.
 
+
+#### Size of datasets in KDnuggets surveys
+
 [KDnuggets](http://www.kdnuggets.com/) has conducted surveys of "the largest dataset you 
 analyzed/data mined" (yearly since 2006).
 It surveys the largest dataset for a given practitioner (instead of the typical one), it
@@ -66,6 +69,9 @@ data, "exponential growth" of sensors and internet-of-things (IoT) etc. suggests
 rate than 20% yearly, the simple linear fit used above does not extend over the 90% percentile and 
 it's hard to tell either way directly from this survey data.
 
+
+#### Size of datasets for modeling
+
 Unfortunately it is unclear from all this study what's the distribution of dataset sizes used for 
 modeling/machine learning (my primary area of interest). Some informal surveys 
 done at various [meetups and conference talks](https://github.com/szilard/talks) suggest that for 
@@ -76,8 +82,29 @@ for a benchmark of the most commonly used open source tools for non-linear super
 Many of the "big data" tools in this domain (non-linear supervised learning) 
 are clunky, slow, memory-inefficient and buggy (affecting predictive accuracy).
 
-TODO: max RAM vs year (2006-2015) for high-end server/largest EC2
 
+#### Size of RAM of single machine
 
+The size of EC2 instances with largest RAM:
 
+year  | type        | RAM (GB)
+------|-------------|--------
+2007  | m1.xlarge   |   15
+2009  | m2.4xlarge  |   68
+2012  | hs1.8xlarge |  117
+2014  | r3.8xlarge  |  244
+2016* | x1          |  2 TB
+
+With different assumptions one can get yearly RAM increase rates of 50%, 60% or 70%:
+
+from year |  from GB  |   to year  | to GB     |  rate
+----------|-----------|------------|-----------|--------
+2007      |    15     |    2014    |   244     |  50%
+2007      |    15     |    2016    |   2000    |  70%
+2009      |    68     |    2016    |   2000    |  60%
+
+Either way, the rate of increase of RAM of a single machine is much higher than the
+rate of increase of the typical dataset used for analytics (20%). This has huge
+implications in terms of in-memory processing (e.g. distributed SQL) and 
+even single-machine processing (e.g. non-linear machine learning).
 

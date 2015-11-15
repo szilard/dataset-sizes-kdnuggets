@@ -1,0 +1,49 @@
+```{r}
+knitr::opts_chunk$set(fig.path='../figs/')
+```
+
+```{r}
+library(dplyr)
+library(readr)
+library(ggplot2)
+library(scales)
+
+d <- read_csv("../data/ec2-ram-sizes.csv") 
+```
+
+```{r ram-ec2}
+d %>% ggplot(aes(x = year, y = size_GB, color = year>2015)) + geom_point(size=5) +
+  geom_text(aes(label = type), angle = -30, size = 4) +
+  scale_x_continuous(breaks = 2006:2016) + 
+  scale_y_log10(breaks=c(10,30,100,300,1000,3000), limits=c(10,3000)) 
+```
+
+
+RAM/yr increase 50% assuming 2007 15 GB - 2014 244 GB
+
+```{r}
+244/15
+10^(log10(244/15)/(2014-2007))
+1.5^(2014-2007)
+```
+
+
+RAM/yr increase 70% assuming 2007 15 GB - 2016 2TB 
+
+```{r}
+2000/15
+10^(log10(2000/15)/(2016-2007))
+1.7^(2016-2007)
+```
+
+
+RAM/yr increase 60% assuming 2009 68 GB - 2016 2TB 
+
+```{r}
+2000/68
+10^(log10(2000/68)/(2016-2009))
+1.6^(2016-2009)
+```
+
+
+
