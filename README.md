@@ -21,7 +21,7 @@ It surveys the largest dataset for a given practitioner (instead of the typical 
 measures size in bytes (rather than the more informative number of records) and it surveys
 raw data sizes (I would be more interested in the size of the refined datasets used for modeling).
 Nevertheless, it provides data points interesting for a study. (One could also 
-question the representativeness of the sample etc.)
+question the representativeness of the sample, changing respondents over the years etc.)
 
 The annual polls are available on various [URLs](data/survey-urls.txt) 
 and I compiled the data into a [csv file](data/dataset-sizes.csv).
