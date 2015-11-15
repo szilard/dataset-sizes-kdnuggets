@@ -1,0 +1,138 @@
+```{r}
+knitr::opts_chunk$set(fig.path='../figs/')
+```
+
+```{r}
+library(dplyr)
+library(readr)
+library(ggplot2)
+library(scales)
+
+d <- read_csv("../data/dataset-sizes.csv") %>% 
+    group_by(year) %>% mutate(freq = freq/sum(freq)) %>% 
+    arrange(year, size_GB) %>% mutate(cum_freq = cumsum(freq)) 
+```
+
+```{r cumfq-size-few_yrs}
+
+d %>% filter(year %in% c(2006,2009,2012,2015)) %>% 
+    ggplot(aes(x = size_GB, y = cum_freq, color = as.factor(year))) +
+       geom_line() + scale_x_log10() + scale_y_continuous(breaks=(0:10)/10) 
+```
+
+```{r cumfq-size-few_yrs-clean}   
+d %>% filter(year %in% c(2006,2009,2012,2015)) %>% 
+    ggplot(aes(x = size_GB, y = cum_freq, color = as.factor(year))) +
+       geom_line() +
+       scale_x_log10(breaks = c(0.01,1,100,1e4,1e6), 
+            labels=c("10M","1G","100G","10T","1P")) +
+       scale_y_continuous(breaks=(0:10)/10)
+```
+
+```{r cumfq-size-all_yrs}
+d %>% ggplot(aes(x = size_GB, y = cum_freq, color = as.factor(year))) +
+       geom_line() + scale_x_log10() + scale_y_continuous(breaks=(0:10)/10) 
+```
+
+```{r cumfq-size-loess}   
+d %>% mutate(size_GB = ifelse(size_GB==Inf,1e9,size_GB)) %>% 
+    filter(year %in% c(2006,2009,2012,2015)) %>% 
+    ggplot(aes(x = size_GB, y = cum_freq, color = as.factor(year))) +
+       geom_point() +
+       scale_x_log10(limits = c(0.03,10000),
+            breaks = c(1,3,10,30,100,300,1000,10000), 
+            labels=format_format(digits=0)) +
+       scale_y_continuous(breaks=(0:10)/10) +
+       geom_smooth(method = "loess", se = FALSE, span = 2 )
+```
+
+```{r fit}
+
+d_fit <- d %>% filter(cum_freq > 0.1, cum_freq < 0.9)
+## d_fit <- d %>% filter(cum_freq > 0.1, cum_freq < 0.9, year>2006)   ## 2006 rm outlier
+md <- lm(log(size_GB,10) ~ cum_freq + year, d_fit)
+md
+
+d_fit$size_GB_pred <- 10^predict(md, select(d_fit,cum_freq,year))
+```
+
+
+```{r cumfq-size-fit}
+
+d_fit %>% filter(year %in% c(2006,2009,2012,2015)) %>% 
+    ggplot() +
+       geom_point(aes(x = size_GB, y = cum_freq, color = as.factor(year))) +
+       scale_x_log10(limits = c(0.1,10000), 
+            breaks = c(1,3,10,30,100,300,1000,10000), 
+            labels=format_format(digits=0)) +
+       scale_y_continuous(breaks=(0:10)/10) +
+       geom_line(aes(x = size_GB_pred, y = cum_freq, color = as.factor(year)))
+```
+
+```{r fit-scenarios}
+10^predict(md, data.frame(cum_freq = 0.5, year = 2006:2015))
+10^predict(md, data.frame(cum_freq = 0.8, year = 2006:2015))
+
+10^predict(md, data.frame(cum_freq = seq(0.5,0.9,0.1), year = 2015))
+
+10^coef(md)["year"]
+(10^coef(md)["year"])^(2015-2006)
+
+10^(coef(md)["cum_freq"]*0.1)
+10^(coef(md)["cum_freq"]*(0.9-0.5))
+```
+
+```{r bigdata-few_yrs}
+d %>% filter(year %in% c(2006,2009,2012,2015), size_GB>100) %>%
+    ggplot() +
+       geom_line(aes(x = size_GB, y = cum_freq, color = as.factor(year))) +
+       scale_x_log10() + ylim(c(0.8,1))
+```
+
+```{r bigdata-all_yrs}
+d %>% filter(size_GB>100) %>%
+    ggplot() + 
+       geom_line(aes(x = size_GB, y = cum_freq, color = as.factor(year))) +
+       scale_x_log10() + ylim(c(0.8,1))
+```
+
+```{r bigdata-few_yrs2}
+d %>% filter(year %in% c(2007,2009,2011,2013,2015), size_GB>100) %>% 
+    ggplot() +
+       geom_line(aes(x = size_GB, y = cum_freq, color = as.factor(year))) +
+       scale_x_log10() + ylim(c(0.8,1))
+```
+
+```{r bigdata-few_lastyrs}
+d %>% filter(year>=2011, size_GB>100) %>% 
+    ggplot() +
+       geom_line(aes(x = size_GB, y = cum_freq, color = as.factor(year))) +
+       scale_x_log10() + ylim(c(0.8,1))
+```
+
+```{r size-groups}
+
+max_noInf <- function(x) max(x[is.finite(x)])
+grp_tr <- function(x) { 
+  nm <- list(`-1`="mega",`0`="giga",`1`="tera",`2`="peta")
+  sapply(x, function(a) nm[[as.character(a)]])
+}
+  
+d %>% group_by(year) %>% mutate(max_size = max_noInf(size_GB)) %>% 
+    mutate(size_noInf = ifelse(is.finite(size_GB),size_GB,max_size*10)) %>% 
+    mutate(size_grp = floor((log10(size_noInf)-1)/3)) %>% 
+    mutate(size_grp = ifelse(size_grp>=0,size_grp,-1)) %>% 
+    mutate(size_grp = grp_tr(size_grp)) %>% 
+    group_by(year, size_grp) %>% summarize(freq = sum(freq)) %>% 
+  ggplot(aes(x = year, y = freq, color = size_grp)) +
+    geom_point() + geom_line() +
+    scale_x_continuous(breaks=2006:2015)
+```
+
+```{r}
+d %>% filter(cum_freq>0.9) %>% group_by(year) %>% 
+  summarize(size_from = min(size_GB)/10, size_to = min(size_GB))
+```
+
+
+
