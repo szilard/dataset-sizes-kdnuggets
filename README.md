@@ -73,6 +73,8 @@ at least 90% of non-linear supervised learning uses the data fits in the RAM of 
 and can be processed by high-performant tools like xgboost or H2O
 (see [this github repo](https://github.com/szilard/benchm-ml)
 for a benchmark of the most commonly used open source tools for non-linear supervised learning).
+Many of the "big data" tools in this domain are clunky, inefficient and buggy (affecting predictive
+accuracy).
 
 TODO: max RAM vs year for high-end server/largest EC2
 
