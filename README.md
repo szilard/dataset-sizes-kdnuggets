@@ -29,7 +29,7 @@ The cummulative distribution of dataset sizes for a few select years is plotted 
 ![](figs/cumfq-size-few_yrs-clean-1.png)
 
 The dataset sizes vary over many orders of magnitude with most users in the 10 Megabytes to
-10 Terrabytes range (a huge range), but furthermore with some users in the many Pettabytes range.
+10 Terabytes range (a huge range), but furthermore with some users in the many Pettabytes range.
 
 It seems the cummulative distribution function in the `0.1-0.9` range follows a linear dependecy 
 vs `log(size)`:
@@ -57,7 +57,7 @@ quantile  |  value
 80%       |  2 TB
 90%       |  8 TB
 
-The Terrabyte range is the home turf of data warehouses, MPP/analytical databases and the like, but
+The Terabyte range is the home turf of data warehouses, MPP/analytical databases and the like, but
 many organizations are trying to use "big data" tools for those sizes. 
 
 About 5% of uses are in the Pettabytes range and likely need big data tools like Hadoop or Spark. 
