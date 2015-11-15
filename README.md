@@ -13,7 +13,7 @@ modeling/machine learning.
 In terms of computational resources needed I like to think in terms of the 
 [pyramid of analytical tasks](https://github.com/szilard/datascience-latency#latency-numbers-every-data-scientist-should-know).
 I'm mostly interested in tools for non-linear machine learning, the distribution of dataset sizes
-practitioners have to deal with, and how all this has changed over the last years.
+practitioners have to deal with, and how all this is changing in time.
 
 
 #### Size of datasets in KDnuggets surveys
@@ -21,7 +21,7 @@ practitioners have to deal with, and how all this has changed over the last year
 [KDnuggets](http://www.kdnuggets.com/) has conducted surveys of "the largest dataset you 
 analyzed/data mined" (yearly since 2006).
 It surveys the largest dataset for a given practitioner (instead of the typical one), it
-measures size in bytes (rather than the more informative number of records) and it surveys
+measures size in bytes (rather than my preference for number of records), and it surveys
 raw data sizes (I would be more interested in the size of the refined datasets used for modeling).
 Nevertheless, it provides data points interesting for a study. (One could also 
 question the representativeness of the sample, changing respondents over the years etc.)
@@ -38,7 +38,7 @@ It seems the cummulative distribution function in the `0.1-0.9` range follows a 
 vs `log(size)`:
 ![](figs/cumfq-size-fit-1.png).
 
-Fitting a linear regression `lm(log(size_GB, 10) ~ cum_freq + year, ...)` for that range,
+Fitting a linear regression `lm(log10(size_GB) ~ cum_freq + year, ...)` for that range,
 one gets coefficients `year: 0.075` and `cum_freq: 6.0`. We can use this "model" as a smoother
 in the discussion below.
 
@@ -65,9 +65,9 @@ many organizations are trying to use "big data" tools for those sizes.
 
 About 5% of uses are in the Petabytes range and likely need big data tools like Hadoop or Spark. 
 While the hype around big
-data, "exponential growth" of sensors and internet-of-things (IoT) etc. suggests a more rapid growth
+data, "exponential growth" of sensors and Internet-of-Things (IoT) etc. suggests a more rapid growth
 rate than 20% yearly, the simple linear fit used above does not extend over the 90% percentile and 
-it's hard to tell either way directly from this survey data.
+it's hard to tell any trends for these large sizes from this survey data.
 
 
 #### Size of datasets for modeling
@@ -106,5 +106,5 @@ from year |  from GB  |   to year  | to GB     |  rate
 Either way, the rate of increase of RAM of a single machine is much higher than the
 rate of increase of the typical dataset used for analytics (20%). This has huge
 implications in terms of in-memory processing (e.g. distributed SQL) and 
-even single-machine processing (e.g. non-linear machine learning).
+single-machine processing (e.g. non-linear machine learning).
 

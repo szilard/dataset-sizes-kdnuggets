@@ -25,7 +25,7 @@ d %>% filter(year %in% c(2006,2009,2012,2015)) %>%
     ggplot(aes(x = size_GB, y = cum_freq, color = as.factor(year))) +
        geom_line() +
        scale_x_log10(breaks = c(0.01,1,100,1e4,1e6), 
-            labels=c("10M","1G","100G","10T","1P")) +
+            labels=c("10M","1G","100G","10T","1P")) + xlab("size") +
        scale_y_continuous(breaks=(0:10)/10)
 ```
 
@@ -49,8 +49,8 @@ d %>% mutate(size_GB = ifelse(size_GB==Inf,1e9,size_GB)) %>%
 ```{r fit}
 
 d_fit <- d %>% filter(cum_freq > 0.1, cum_freq < 0.9)
-## d_fit <- d %>% filter(cum_freq > 0.1, cum_freq < 0.9, year>2006)   ## 2006 rm outlier
-md <- lm(log(size_GB,10) ~ cum_freq + year, d_fit)
+## d_fit <- d %>% filter(cum_freq > 0.1, cum_freq < 0.9, year>2006)   ## rm outlier
+md <- lm(log10(size_GB) ~ cum_freq + year, d_fit)
 md
 
 d_fit$size_GB_pred <- 10^predict(md, select(d_fit,cum_freq,year))
