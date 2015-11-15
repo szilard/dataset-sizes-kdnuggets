@@ -76,7 +76,7 @@ for a benchmark of the most commonly used open source tools for non-linear super
 Many of the "big data" tools in this domain are clunky, inefficient and buggy (affecting predictive
 accuracy).
 
-TODO: max RAM vs year for high-end server/largest EC2
+TODO: max RAM vs year (2006-2015) for high-end server/largest EC2
 
 
 
