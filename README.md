@@ -18,13 +18,12 @@ practitioners have to deal with, and how this has changed over the last years.
 Kdnuggets has conducted surveys of "the largest dataset you analyzed/data mined" (yearly since 2006).
 It surveys the largest dataset for a given practitioner (instead of the typical one), it
 measures size in bytes (rather than the more informative number of records) and it surveys
-raw data sizes (I would be more interested in size of the refined datasets used for modeling).
+raw data sizes (I would be more interested in the size of the refined datasets used for modeling).
 Nevertheless, it provides data points interesting for a study. (One could also 
 question the representativeness of the sample etc.)
 
 The annual polls are available on various [URLs](data/survey-urls.txt) 
 and I compiled the data into a [csv file](data/dataset-sizes.csv).
-
 The cummulative distribution of dataset sizes for a few select years is plotted below:
 ![](figs/cumfq-size-few_yrs-clean-1.png)
 
@@ -33,7 +32,7 @@ The dataset sizes vary over many orders of magnitude with most users in the 10 M
 
 It seems the cummulative distribution function in the `0.1-0.9` range follows a linear dependecy 
 vs `log(size)`:
-![](cumfq-size-fit-1.png).
+![](figs/cumfq-size-fit-1.png).
 
 Fitting a linear regression `lm(log(size_GB, 10) ~ cum_freq + year, ...)` for that range,
 one gets coefficients `year: 0.075` and `cum_freq: 6.0`. We can use this "model" as a smoother
