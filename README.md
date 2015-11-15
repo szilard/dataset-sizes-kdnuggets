@@ -85,7 +85,7 @@ are clunky, slow, memory-inefficient and buggy (affecting predictive accuracy).
 
 #### Size of RAM of single machine
 
-The size of EC2 instances with largest RAM:
+The [size of EC2 instances](https://aws.amazon.com/blogs/aws/ec2-instance-history/) with largest RAM:
 
 year  | type        | RAM (GB)
 ------|-------------|--------
