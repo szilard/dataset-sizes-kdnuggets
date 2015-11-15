@@ -8,12 +8,12 @@ often more immature compared to the traditional tools for data analysis).
 During the process of data analysis we typically start with some larger raw datasets, 
 we transform, clean and prepare them for modeling (typically with SQL-like 
 transformations) and then we use these refined and usually smaller datasets for
-modeling.
+modeling/machine learning.
 
 In terms of computational resources needed I like to think in terms of the 
 [pyramid of analytical tasks](https://github.com/szilard/datascience-latency#latency-numbers-every-data-scientist-should-know).
 I'm mostly interested in tools for non-linear machine learning, the distribution of dataset sizes
-practitioners have to deal with, and how this has changed over the last years.
+practitioners have to deal with, and how all this has changed over the last years.
 
 [KDnuggets](http://www.kdnuggets.com/) has conducted surveys of "the largest dataset you 
 analyzed/data mined" (yearly since 2006).
@@ -29,7 +29,7 @@ The cummulative distribution of dataset sizes for a few select years is plotted 
 ![](figs/cumfq-size-few_yrs-clean-1.png)
 
 The dataset sizes vary over many orders of magnitude with most users in the 10 Megabytes to
-10 Terabytes range (a huge range), but furthermore with some users in the many Pettabytes range.
+10 Terabytes range (a huge range), but furthermore with some users in the many Petabytes range.
 
 It seems the cummulative distribution function in the `0.1-0.9` range follows a linear dependecy 
 vs `log(size)`:
@@ -60,7 +60,7 @@ quantile  |  value
 The Terabyte range is the home turf of data warehouses, MPP/analytical databases and the like, but
 many organizations are trying to use "big data" tools for those sizes. 
 
-About 5% of uses are in the Pettabytes range and likely need big data tools like Hadoop or Spark. 
+About 5% of uses are in the Petabytes range and likely need big data tools like Hadoop or Spark. 
 While the hype around big
 data, "exponential growth" of sensors and internet-of-things (IoT) etc. suggests a more rapid growth
 rate than 20% yearly, the simple linear fit used above does not extend over the 90% percentile and 
