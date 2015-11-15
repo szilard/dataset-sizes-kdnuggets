@@ -105,6 +105,6 @@ from year |  from GB  |   to year  | to GB     |  rate
 
 Either way, the rate of increase of RAM of a single machine is much higher than the
 rate of increase of the typical dataset used for analytics (20%). This has huge
-implications in terms of in-memory processing (e.g. distributed SQL) and 
-single-machine processing (e.g. non-linear machine learning).
+implications in terms of in-memory (distributed) processing (e.g. SQL) and 
+single-machine (in-memory) processing (e.g. non-linear machine learning).
 
