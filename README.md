@@ -15,7 +15,8 @@ In terms of computational resources needed I like to think in terms of the
 I'm mostly interested in tools for non-linear machine learning, the distribution of dataset sizes
 practitioners have to deal with, and how this has changed over the last years.
 
-Kdnuggets has conducted surveys of "the largest dataset you analyzed/data mined" (yearly since 2006).
+[KDnuggets](http://www.kdnuggets.com/) has conducted surveys of "the largest dataset you 
+analyzed/data mined" (yearly since 2006).
 It surveys the largest dataset for a given practitioner (instead of the typical one), it
 measures size in bytes (rather than the more informative number of records) and it surveys
 raw data sizes (I would be more interested in the size of the refined datasets used for modeling).
