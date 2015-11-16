@@ -76,7 +76,7 @@ A [Microsoft research study](http://research.microsoft.com/pubs/163083/hotcbp12%
 has found that the median size of input jobs submitted to an analytic production Hadoop cluster 
 at Microsoft in 2011 was 14 GB, and it infers from other studies that the median 
 data size of input jobs in a Yahoo production cluster was 12 GB, while 90% of the inputs in a
-analytical production cluster at Facebook was 100 GB.
+analytical production cluster at Facebook were of size less than 100 GB.
 
 
 
