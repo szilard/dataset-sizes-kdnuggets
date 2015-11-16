@@ -49,8 +49,8 @@ raw datasets, and it implies that over 50% of analytics professionals work with 
 that (even in raw form) can fit in the memory of a single machine, therefore it can be definitely dealt 
 with using simple analytical tools.
 
-However, the dataset sizes are distributed over many orders magnitudes, e.g. the larger quantiles
-based on smoothing for 2015 are:
+On the other hand, the dataset sizes are distributed over many orders magnitudes,
+e.g. the larger quantiles based on smoothing for 2015 are:
 
 quantile  |  value
 ----------|---------
@@ -70,13 +70,22 @@ rate than 20% yearly, the simple linear fit used above does not extend over the 
 it's hard to tell any trends for these large sizes from this survey data.
 
 
+#### Size of datasets in other studies
+
+A [Microsoft research study](http://research.microsoft.com/pubs/163083/hotcbp12%20final.pdf) 
+has found that the median size of input jobs submitted to an analytic production Hadoop cluster 
+at Microsoft in 2011 was 14 GB (an infers that at Yahoo it was 12 GB).
+....
+
+
 #### Size of datasets for modeling
 
-Unfortunately it is unclear from all this study what's the distribution of dataset sizes used for 
-modeling/machine learning (my primary area of interest). Some informal surveys 
+Unfortunately it is unclear from all this discussion what's the distribution of dataset sizes used for 
+modeling/machine learning (my primary area of interest). Some informal surveys I have
 done at various [meetups and conference talks](https://github.com/szilard/talks) suggest that for 
-at least 90% of non-linear supervised learning uses the data fits in the RAM of a single machine 
-and can be processed by high-performant tools like xgboost or H2O
+at least 90% of non-linear supervised learning use cases the data fits well in the RAM of a single machine 
+and can be processed by high-performant tools like xgboost or H2O or in many cases even by
+using R packages or Python sklearn
 (see [this github repo](https://github.com/szilard/benchm-ml)
 for a benchmark of the most commonly used open source tools for non-linear supervised learning).
 Many of the "big data" tools in this domain (non-linear supervised learning) 
