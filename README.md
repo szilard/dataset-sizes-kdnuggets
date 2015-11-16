@@ -2,7 +2,7 @@
 ### Size of datasets used for analytics
 
 With so much hype about "big data" and the industry pushing for "big data" tools for everyone,
-the question arises how many people have big data and how many really needs these tools (which are more complex and 
+the question arises how many people have big data and how many of them really need these tools (which are more complex and 
 often more immature compared to the traditional tools for data analysis).
 
 During the process of data analysis we typically start with some larger raw datasets, 
