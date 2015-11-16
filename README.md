@@ -118,6 +118,6 @@ Either way, the rate of increase of RAM of a single machine is much higher than 
 rate of increase of the typical dataset used for analytics (20%). This has huge
 implications in terms of in-memory (distributed) processing (e.g. SQL) and 
 single-machine processing (e.g. non-linear machine learning). 
-Big RAM is eating big data.
+**Big RAM is eating big data.**
 
 
