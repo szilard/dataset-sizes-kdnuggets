@@ -1,19 +1,19 @@
 
 ### Size of datasets used for analytics
 
-With so much hype about "big data" and the industry pushing for "big data" tools for everyone,
+With so much hype about "big data" and the industry pushing for "big data" analytical tools for everyone,
 the question arises how many people have big data and how many of them really need these tools (which are more complex and 
 often more immature compared to the traditional tools for data analysis).
 
 During the process of data analysis we typically start with some larger raw datasets, 
 we transform, clean and prepare them for modeling (typically with SQL-like 
-transformations) and then we use these refined and usually smaller datasets for
+transformations), and then we use these refined and usually smaller datasets for
 modeling/machine learning.
 
 In terms of computational resources needed I like to think in terms of the 
 [pyramid of analytical tasks](https://github.com/szilard/datascience-latency#latency-numbers-every-data-scientist-should-know).
 I'm mostly interested in tools for non-linear machine learning, the distribution of dataset sizes
-practitioners have to deal with, and how all this is changing in time.
+practitioners have to deal with in this area, and how all this is changing in time.
 
 
 #### Size of datasets in KDnuggets surveys
@@ -23,7 +23,7 @@ analyzed/data mined" (yearly since 2006).
 It surveys the largest dataset for a given practitioner (instead of the typical one), it
 measures size in bytes (rather than my preference for number of records), and it surveys
 raw data sizes (I would be more interested in the size of the refined datasets used for modeling).
-Nevertheless, it provides data points interesting for a study. (One could also 
+Nevertheless, it provides data points interesting to study. (One could also 
 question the representativeness of the sample, changing respondents over the years etc.)
 
 The annual polls are available on various [URLs](data/survey-urls.txt) 
@@ -36,7 +36,7 @@ The dataset sizes vary over many orders of magnitude with most users in the 10 M
 
 It seems the cummulative distribution function in the `0.1-0.9` range follows a linear dependecy 
 vs `log(size)`:
-![](figs/cumfq-size-fit-1.png).
+![](figs/cumfq-size-fit-1.png)
 
 Fitting a linear regression `lm(log10(size_GB) ~ cum_freq + year, ...)` for that range,
 one gets coefficients `year: 0.075` and `cum_freq: 6.0`. We can use this "model" as a smoother
