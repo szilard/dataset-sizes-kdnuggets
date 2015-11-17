@@ -1,6 +1,8 @@
 
 ### Size of datasets used for analytics
 
+
+
 With so much hype about "big data" and the industry pushing for "big data" analytical tools for everyone,
 the question arises how many people have big data (for analytics)
 and how many of them really need these tools (which are more complex and 
@@ -76,7 +78,7 @@ it's hard to tell any trends for these large sizes from this survey data.
 A [Microsoft research study](http://research.microsoft.com/pubs/163083/hotcbp12%20final.pdf) 
 has found that the median size of input jobs submitted to an analytic production Hadoop cluster 
 at Microsoft in 2011 was 14 GB, and it infers from other studies that the median 
-data size of input jobs in a Yahoo production cluster was 12 GB, while 90% of the inputs in a
+data size of input jobs in a Yahoo production cluster was 12 GB, while 90% of the inputs in an
 analytical production cluster at Facebook were of size less than 100 GB.
 
 
@@ -118,7 +120,8 @@ from year |  from GB  |   to year  | to GB     |  rate
 Either way, the rate of increase of RAM of a single machine is much higher than the
 rate of increase of the typical dataset used for analytics (20%). This has huge
 implications in terms of in-memory (distributed) processing (e.g. SQL) and 
-single-machine processing (e.g. non-linear machine learning). 
+single-machine processing (e.g. non-linear machine learning or even plain old
+R/Python). 
 
 **Big RAM is eating big data.**
 
