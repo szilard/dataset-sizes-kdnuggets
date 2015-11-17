@@ -122,7 +122,11 @@ Either way, the rate of increase of RAM of a single machine has been much higher
 rate of increase of the typical dataset used for analytics (20%). This has huge
 implications in terms of in-memory (distributed) processing (e.g. SQL) and 
 single-machine processing (e.g. non-linear machine learning or even plain old
-R/Python). **Big RAM is eating big data.**
+R/Python). **Big RAM is eating big data.** For example, the fact that many datasets
+(already refined for modeling) now fit in the RAM of a single high-end server and 
+one can train machine learning models on them without distributed computing [has
+been noticed](http://fastml.com/the-emperors-new-clothes-distributed-machine-learning/) 
+by many top large scale machine learning experts. 
 
 Of course, maybe data (useful for analytics) is increasing faster, and the slower 20% per yr 
 increase based on the KDnuggets
