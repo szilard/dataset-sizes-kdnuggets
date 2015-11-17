@@ -118,7 +118,7 @@ from year |  from GB  |   to year  | to GB     |  rate
 2007      |    15     |    2016    |   2000    |  70%
 2009      |    68     |    2016    |   2000    |  60%
 
-Either way, the rate of increase of RAM of a single machine is much higher than the
+Either way, the rate of increase of RAM of a single machine has been much higher than the
 rate of increase of the typical dataset used for analytics (20%). This has huge
 implications in terms of in-memory (distributed) processing (e.g. SQL) and 
 single-machine processing (e.g. non-linear machine learning or even plain old
@@ -127,7 +127,7 @@ R/Python). **Big RAM is eating big data.**
 Of course, maybe data (useful for analytics) is increasing faster, and the slower 20% per yr 
 increase based on the KDnuggets
 poll just shows our inability (or the inability of our tools) to deal with ever larger data or
-there is some strong bias and non-representativeness in the KDnuggets survey etc.
+maybe there is some strong bias and non-representativeness in the KDnuggets survey etc.
 Maybe *your* data increases faster. Maybe you *think* data is bigger and increasing faster.
 But facts should trump opinions, so
 I'd love to see more data and analysis either supporting or contradicting the above results.
