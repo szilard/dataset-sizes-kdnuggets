@@ -2,7 +2,6 @@
 ### Size of datasets used for analytics
 
 
-
 With so much hype about "big data" and the industry pushing for "big data" analytical tools for everyone,
 the question arises how many people have big data (for analytics)
 and how many of them really need these tools (which are more complex and 
@@ -31,14 +30,14 @@ question the representativeness of the sample, changing respondents over the yea
 
 The annual polls are available on various [URLs](data/survey-urls.txt) 
 and I compiled the data into a [csv file](data/dataset-sizes.csv).
-The cummulative distribution of dataset sizes for a few select years is plotted below:
+The cumulative distribution of dataset sizes for a few select years is plotted below:
 ![](figs/cumfq-size-few_yrs-clean-1.png)
 
 The dataset sizes vary over many orders of magnitude with most users in the 10 Megabytes to
 10 Terabytes range (a huge range), but furthermore with some users in the many Petabytes range.
 
-It seems the cummulative distribution function in the `0.1-0.9` range (on the vertical axis) 
-follows a linear dependecy vs `log(size)`:
+It seems the cumulative distribution function in the `0.1-0.9` range (on the vertical axis) 
+follows a linear dependency vs `log(size)`:
 ![](figs/cumfq-size-fit-1.png)
 
 Fitting a linear regression `lm(log10(size_GB) ~ cum_freq + year, ...)` for that range,
@@ -97,7 +96,7 @@ Many of the "big data" tools in this domain (non-linear supervised learning)
 are clunky, slow, memory-inefficient and buggy (affecting predictive accuracy).
 
 
-#### Size of RAM of single machine
+#### Size of RAM of a single machine
 
 The [size of EC2 instances](https://aws.amazon.com/blogs/aws/ec2-instance-history/) with largest RAM:
 
@@ -124,5 +123,13 @@ single-machine processing (e.g. non-linear machine learning or even plain old
 R/Python). 
 
 **Big RAM is eating big data.**
+
+Of course, maybe data (useful for analytics) is increasing faster (and the slower 20% per yr 
+increase in the KDnuggets
+poll just shows our inability or the inability of our tools to deal with larger data).
+Maybe *your* data increases faster. 
+But facts trump options, so
+I'd love to see more data and analysis either supporting or contradicting the above results.
+
 
 
