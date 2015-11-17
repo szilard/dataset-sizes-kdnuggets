@@ -2,7 +2,7 @@
 ### Size of datasets used for analytics
 
 **TL;DR:** Big RAM is eating big data. RAM increases 50% per year, while 
-the size of datasets used for analytics increase 20% per year.
+the size of datasets used for analytics increases 20% per year.
 
 With so much hype about "big data" and the industry pushing for "big data" analytical tools for everyone,
 the question arises how many people have big data (for analytics)
@@ -128,7 +128,7 @@ Of course, maybe data (useful for analytics) is increasing faster, and the slowe
 increase based on the KDnuggets
 poll just shows our inability (or the inability of our tools) to deal with ever larger data or
 there is some strong bias and non-representativeness in the KDnuggets survey etc.
-Maybe *your* data increases faster. Maybe you think data is increasing faster.
+Maybe *your* data increases faster. Maybe you *think* data is bigger and increasing faster.
 But facts should trump opinions, so
 I'd love to see more data and analysis either supporting or contradicting the above results.
 
