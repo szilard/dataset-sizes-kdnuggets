@@ -2,11 +2,12 @@
 ### Size of datasets used for analytics
 
 With so much hype about "big data" and the industry pushing for "big data" analytical tools for everyone,
-the question arises how many people have big data and how many of them really need these tools (which are more complex and 
-often more immature compared to the traditional tools for data analysis).
+the question arises how many people have big data (for analytics)
+and how many of them really need these tools (which are more complex and 
+often more immature compared to the traditional tools for analytics).
 
 During the process of data analysis we typically start with some larger raw datasets, 
-we transform, clean and prepare them for modeling (typically with SQL-like 
+we transform/clean/prepare them for modeling (typically with SQL-like 
 transformations), and then we use these refined and usually smaller datasets for
 modeling/machine learning.
 
