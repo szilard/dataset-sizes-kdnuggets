@@ -128,7 +128,7 @@ Of course, maybe data (useful for analytics) is increasing faster (and the slowe
 increase in the KDnuggets
 poll just shows our inability or the inability of our tools to deal with larger data).
 Maybe *your* data increases faster. 
-But facts trump options, so
+But facts trump opinions, so
 I'd love to see more data and analysis either supporting or contradicting the above results.
 
 
