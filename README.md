@@ -6,7 +6,7 @@ the question arises how many people have big data (for analytics)
 and how many of them really need these tools (which are more complex and 
 often more immature compared to the traditional tools for analytics).
 
-During the process of data analysis we typically start with some larger raw datasets, 
+During the process of data analysis we typically start with some larger "raw" datasets, 
 we transform/clean/prepare them for modeling (typically with SQL-like 
 transformations), and then we use these refined and usually smaller datasets for
 modeling/machine learning.
@@ -35,8 +35,8 @@ The cummulative distribution of dataset sizes for a few select years is plotted 
 The dataset sizes vary over many orders of magnitude with most users in the 10 Megabytes to
 10 Terabytes range (a huge range), but furthermore with some users in the many Petabytes range.
 
-It seems the cummulative distribution function in the `0.1-0.9` range follows a linear dependecy 
-vs `log(size)`:
+It seems the cummulative distribution function in the `0.1-0.9` range (on the vertical axis) 
+follows a linear dependecy vs `log(size)`:
 ![](figs/cumfq-size-fit-1.png)
 
 Fitting a linear regression `lm(log10(size_GB) ~ cum_freq + year, ...)` for that range,
