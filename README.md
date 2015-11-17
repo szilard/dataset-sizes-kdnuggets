@@ -62,9 +62,9 @@ quantile  |  value
 90%       |  8 TB
 
 The Terabyte range is the home turf of data warehouses, MPP/analytical databases and the like, but
-many organizations are trying to use "big data" tools for those sizes. 
+many organizations are using "big data" tools (Hadoop/Spark) for those sizes. 
 
-About 5% of uses are in the Petabytes range and likely need big data tools like Hadoop or Spark. 
+About 5% of uses are in the Petabytes range and likely use Hadoop/Spark. 
 While the hype around big
 data, "exponential growth" of sensors and Internet-of-Things (IoT) etc. suggests a more rapid growth
 rate than 20% yearly, the simple linear fit used above does not extend over the 90% percentile and 
