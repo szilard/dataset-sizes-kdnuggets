@@ -1,8 +1,6 @@
 
 ### Size of datasets used for analytics
 
-**TL;DR:** Big RAM is eating big data. RAM has increased 50% per year, while 
-the size of datasets used for analytics 20% per year.
 
 With so much hype about "big data" and the industry pushing for "big data" analytical tools for everyone,
 the question arises how many people have big data (for analytics)
