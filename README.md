@@ -123,7 +123,7 @@ single-machine processing (e.g. non-linear machine learning or even plain old
 R/Python). **Big RAM is eating big data.** For example, the fact that many datasets
 (already refined for modeling) now fit in the RAM of a single high-end server and 
 one can train machine learning models on them without distributed computing [has
-been noticed](http://fastml.com/the-emperors-new-clothes-distributed-machine-learning/) 
+been noted](http://fastml.com/the-emperors-new-clothes-distributed-machine-learning/) 
 by many top large scale machine learning experts. 
 
 Of course, maybe data (useful for analytics) is increasing faster, and the slower 20% per yr 
